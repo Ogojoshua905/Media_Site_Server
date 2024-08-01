@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Site</title> <!-- Make sure this path is correct -->
+    <style>
+        .hover-effect {
+            background-color: lightblue;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            color: white;
+        }
+        .hover-effect:hover {
+            background-color: darkblue;
+            color: white;
+        }
+    </style>
+    <!-- <script>
+        function hoverIn(element) {
+            element.style.backgroundColor = 'darkgreen';
+            element.style.color = 'white';
+        }
+
+        function hoverOut(element) {
+            element.style.backgroundColor = 'lightgreen';
+            element.style.color = 'white';
+        }
+    </script> -->
+</head>
+<body style="background-color: black;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;">
+
+    <nav style="display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;">
+        <li class="hover-effect"><a href="" style="text-decoration: none;">View</a></li>
+        <li class="hover-effect"><a href="" style="text-decoration: none;">Upload</a></li>
+    </nav>
+    <div>
+        <header
+        style="text-align: center;
+    margin-bottom: 40px;">
+            <h1 >ByteMovies</h1>
+            <p style="font-size: 2.5em;
+    color: #333;">Explore Various Media Files</p>
+        </header>
+
+        <section 
+        style="margin-top: 20px;" class="image-gallery">
+            <h2 style="text-align: center">Image Gallery</h2>
+            <div
+            style="justify-content: center;
+            text-align: center;
+            display: flex;">
+                <figure>
+                    <img style="
+                    height: 300px;" src="https://images.pexels.com/photos/7755619/pexels-photo-7755619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Deadpool">
+                    <figcaption>Deapool</figcaption>
+                </figure>
+                <figure>
+                    <img
+                    style="
+                    height: 300px;" 
+                    src="https://images.pexels.com/photos/12689082/pexels-photo-12689082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Spiderman">
+                    <figcaption>Spiderman</figcaption>
+                </figure>
+                <figure>
+                <img 
+                style="height: 300px;"
+                src="https://images.pexels.com/photos/6633/car-superhero-symbol-batman.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Batman">
+                <figcaption>Batman</figcaption>
+            </figure>
+        </div>
+        </section>
+
+        <section>
+        <h2 style="text-align: center;">Video Gallery</h2>
+            <div style="display: flex;
+            margin-top: 20px;">
+                <div class="video">
+                    <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube-nocookie.com/embed/a4tZlRClR2I?si=WiS11vM0NQzF6K_a" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+                <figcaption style="text-align: center;
+                padding: 30px;">Heel Click Fortnite Emote</figcaption>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/oSca__bu0is?si=44MoLdb-Wrr2JzLK&amp;start=11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <figcaption style="text-align: center;
+                padding: 30px;">SLUT ME OUT 2</figcaption>
+            </div>
+        </div>
+        </section>
+        <section class="file-downloads">
+            <h2 style="text-align: center;">Download Files</h2>
+            <ul
+            style="text-align: center;
+            list-style-type: none;">
+                <li><a
+                    style="list-style-type: none;
+                    text-decoration: none;"
+                     href="path/to/file1.pdf" download>File 1 - PDF Document</a></li>
+                <li><a href="path/to/file2.docx" download>File 2 - Word Document</a></li>
+            </ul>
+        </section>
+        
+    </div>
+</body>
+</html>
