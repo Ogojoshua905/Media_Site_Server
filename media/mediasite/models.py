@@ -6,6 +6,6 @@ class MediaSect(models.Model):
     description = models.TextField()
     text = models.TextField(blank=True)
     video = models.URLField(blank=True)
-    file = models.FileField(upload_to='static/files', blank=True, null=True)
-    image = models.ImageField(upload_to='static/images/', blank=True, null=True)
+    pdf = models.FileField(upload_to='static/files', default=".pdf", blank=True, null=True)
+    image = models.ImageField(upload_to='static/images/', default=".jpeg", blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
