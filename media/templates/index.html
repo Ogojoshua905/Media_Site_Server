@@ -17,17 +17,8 @@
             color: white;
         }
     </style>
-    <!-- <script>
-        function hoverIn(element) {
-            element.style.backgroundColor = 'darkgreen';
-            element.style.color = 'white';
-        }
-
-        function hoverOut(element) {
-            element.style.backgroundColor = 'lightgreen';
-            element.style.color = 'white';
-        }
-    </script> -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body style="background-color: black;
     color: white;
@@ -35,14 +26,14 @@
     margin: 0;
     padding: 0;">
 
-    <nav style="display: flex;
+<nav style="display: flex;
     list-style-type: none;
     justify-content: space-between;
     color: white;
     padding: 12px 24px;
     text-decoration: none;">
         <li class="hover-effect"><a href="" style="text-decoration: none;">View</a></li>
-        <li class="hover-effect"><a href="" style="text-decoration: none;">Upload</a></li>
+        <li class="hover-effect"><a style="text-decoration: none;" href="#download">Download</a></li>
     </nav>
     <div>
         <header
@@ -55,11 +46,12 @@
 
         <section 
         style="margin-top: 20px;" class="image-gallery">
-            <h2 style="text-align: center">Image Gallery</h2>
-            <div
-            style="justify-content: center;
+        <h2 style="text-align: center">Image Gallery</h2>
+        <div
+        style="justify-content: space-between;
             text-align: center;
-            display: flex;">
+            display: flex;
+            padding: 24px 24px;">
                 <figure>
                     <img style="
                     height: 300px;" src="https://images.pexels.com/photos/7755619/pexels-photo-7755619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Deadpool">
@@ -81,9 +73,10 @@
         </div>
         </section>
 
-        <section>
+        <section style="padding: 24px 24px;
+        justify-content: space-between;">
         <h2 style="text-align: center;">Video Gallery</h2>
-            <div style="display: flex;
+        <div style="display: flex;
             margin-top: 20px;">
                 <div class="video">
                     <iframe 
@@ -100,25 +93,52 @@
                 padding: 30px;">Heel Click Fortnite Emote</figcaption>
             </div>
             <div>
-                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/oSca__bu0is?si=44MoLdb-Wrr2JzLK&amp;start=11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/oSca__bu0is?si=44MoLdb-Wrr2JzLK&amp;start=11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/efYjsQ24E3w?si=YVfcvNCZrQZJuYAj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <figcaption style="text-align: center;
                 padding: 30px;">SLUT ME OUT 2</figcaption>
             </div>
         </div>
         </section>
-        <section class="file-downloads">
-            <h2 style="text-align: center;">Download Files</h2>
+        <section>
+            <h2 style="text-align: center;" id="download">Download Files</h2>
             <ul
-            style="text-align: center;
-            list-style-type: none;">
+            style="
+            list-style-type: none;
+            display: flex;
+            padding: 50px 50px;
+            justify-content: space-between;
+            justify-items: center;">
                 <li><a
                     style="list-style-type: none;
                     text-decoration: none;"
-                     href="path/to/file1.pdf" download>File 1 - PDF Document</a></li>
-                <li><a href="path/to/file2.docx" download>File 2 - Word Document</a></li>
+                     href="{% static 'bytep.pdf' %}" download>File 1 - PDF Document</a></li>
+                     <li><a style="list-style-type: none;
+                text-decoration: none;" href="path/to/file2.docx" download>File 2 - Word Document</a></li>
             </ul>
         </section>
         
     </div>
+    <!-- <script src="{% static 'js/script.js' %}"></script> -->
+    <script>
+        // Inline JavaScript for dropdown functionality
+        function toggleDropdown() {
+            var dropdownContent = document.getElementById("dropdownContent");
+            dropdownContent.classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>

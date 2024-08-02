@@ -1,11 +1,14 @@
 from django.db import models
+from django.utils import timezone  # Correct import
 
-# Create your models here.
 class MediaSect(models.Model):
     title = models.CharField(max_length=100)
-    description = models.TextField()
+    description = models.TextField(blank=True)
     text = models.TextField(blank=True)
-    video = models.URLField(blank=True)
-    pdf = models.FileField(upload_to='static/files', default=".pdf", blank=True, null=True)
-    image = models.ImageField(upload_to='static/images/', default=".jpeg", blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    video = models.FileField(upload_to='medias/videos', blank=True)
+    pdf = models.FileField(upload_to='static/files', blank=True, null=True)
+    image = models.ImageField(upload_to='static/images/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, blank=True)
+
+    def __str__(self):
+        return self.title
