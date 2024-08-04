@@ -6,7 +6,19 @@ import os
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    context = {
+        "name" : "ByteProwler",
+        "Site" : "Media Site",
+        "Occupation" : "Coding",
+    }
+    return render(request, 'base.html', context)
+
+def media(request):
+    context = {
+        "name" : "ByteProwler",
+        "Site" : "Media Site",
+    }
+    return render(request, 'index.html', context)
 
 def css(request):
     return render(request, 'styles.css')

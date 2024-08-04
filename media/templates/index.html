@@ -1,47 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static tailwind_tags %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Site</title> <!-- Make sure this path is correct -->
-    <style>
-        .hover-effect {
-            background-color: lightblue;
-            padding: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            color: white;
-        }
-        .hover-effect:hover {
-            background-color: darkblue;
-            color: white;
-        }
-    </style>
+    <!-- Tailwindcss -->
+     {% tailwind_css %}
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
-<body style="background-color: black;
-    color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin: 0;
-    padding: 0;">
+<body>
 
-<nav style="display: flex;
-    list-style-type: none;
-    justify-content: space-between;
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;">
-        <li class="hover-effect"><a href="" style="text-decoration: none;">View</a></li>
-        <li class="hover-effect"><a style="text-decoration: none;" href="#download">Download</a></li>
-    </nav>
+<nav>
+        <h2 class="">Byteprowler</h2>
+        <ul>
+            <li><a href="" style="text-decoration: none;">View</a></li>
+            <li class="hover-effect"><a style="text-decoration: none;" href="#download">Download</a></li>
+        </ul>
+        </nav>
     <div>
-        <header
-        style="text-align: center;
-    margin-bottom: 40px;">
-            <h1 >ByteMovies</h1>
-            <p style="font-size: 2.5em;
-    color: #333;">Explore Various Media Files</p>
+        <header>
+            <h1>{{name}}</h1>
+            <p>Explore Various Media Files</p>
         </header>
 
         <section 
@@ -114,7 +96,7 @@
                     text-decoration: none;"
                      href="{% static 'bytep.pdf' %}" download>File 1 - PDF Document</a></li>
                      <li><a style="list-style-type: none;
-                text-decoration: none;" href="path/to/file2.docx" download>File 2 - Word Document</a></li>
+                text-decoration: none;" href="" download>File 2 - Word Document</a></li>
             </ul>
         </section>
         
