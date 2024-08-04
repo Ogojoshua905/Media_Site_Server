@@ -18,7 +18,7 @@ Byteprowler is a Django-based web application that serves as a mockup media site
 
 To build and run the application, follow these steps:
 
-1. Clone the repository using `git clone <https://github.com/Ogo-Joshua905/bytep>
+1. Clone the repository using `git clone <https://github.com/Ogojoshua905/Media_Site_Server.git>
 2. Navigate to the project directory using `cd byteprowler`
 3. Install the required dependencies using `pip install -r requirements.txt`
 4. - **Django Server:** Run the application using `python manage.py runserver`,
