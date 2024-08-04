@@ -1,7 +1,6 @@
 /* media/static/media/css/styles.css */
 
 body {
-    font-family: Arial, sans-serif;
     background-color: black;
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -24,7 +23,7 @@ nav ul {
 }
 
 nav ul li {
-    background-color: lightblue;
+    background-color: hsl(195, 53%, 79%);
     padding: 10px;
     border-radius: 5px;
     display: inline-flex;
@@ -32,7 +31,7 @@ nav ul li {
     color: white;
 }
 nav ul li:hover {
-    background-color: darkblue;
+    background-color: #00008b;
     color: white;
 }
 

@@ -1,11 +1,99 @@
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Media Site</title>
+    {% tailwind_css %}
+    {% load static %}
 </head>
-<body>
-    
+
+<body class="bg-black text-white font-serif">
+    <nav class="flex justify-between p-4 items-center">
+        <h2 class="text-4xl">Byteprowler</h2>
+        <button onclick="toggleDropdown()" class="flex p-3 bg-[#add8e6] text-black hover:text-white hover:bg-[#00008b] rounded-full dropbtn">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+        <ul id="dropdownContent"
+            class="flex-col lg:flex-row absolute lg:static bg-black w-full lg:w-auto gap-x-3 mt-4 lg:mt-0 space-y-2 hidden">
+            <li class="bg-[#add8e6] hover:bg-[#00008b] rounded-full p-3">
+                <a href="#view" class="block text-black hover:text-white text-center" style="text-decoration: none;">View</a>
+            </li>
+            <li class="bg-[#add8e6] hover:bg-[#00008b] rounded-full p-3">
+                <a href="#download" class="block text-black hover:text-white text-center" style="text-decoration: none;">Download</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="place-content-center p-6 space-y-8">
+        <h1 class="text-center text-5xl gap-y-6">{{ name }}</h1>
+        <p class="text-center p-5 font-extrabold">Welcome to A Mockup Site With Django</p>
+    </header>
+
+    <section class="place-content-center">
+        <h2 class="text-center">Image Gallery</h2>
+        <div class="flex gap-x-5 p-4 group place-content-center" id="view">
+            <figure>
+                <img class="h-[300px] rounded-lg"
+                    src="https://images.pexels.com/photos/7755619/pexels-photo-7755619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Deadpool">
+                <figcaption class="text-center">Deapool</figcaption>
+            </figure>
+            <figure>
+                <img class="h-[300px] rounded-lg"
+                    src="https://images.pexels.com/photos/12689082/pexels-photo-12689082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Spiderman">
+                <figcaption class="text-center">Spiderman</figcaption>
+            </figure>
+            <figure>
+                <img class="h-[300px] rounded-lg w-[200px]"
+                    src="https://images.pexels.com/photos/6633/car-superhero-symbol-batman.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Batman">
+                <figcaption class="text-center">Batman</figcaption>
+            </figure>
+        </div>
+        
+    </section>
+
+    <section class="place-content-center p-4">
+        <h2 class="text-center">Video Gallery</h2>
+        <div class="place-content-center flex gap-x-4">
+            <div class="video">
+                <iframe width="560" height="315"
+                    src="https://www.youtube-nocookie.com/embed/a4tZlRClR2I?si=WiS11vM0NQzF6K_a" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <figcaption style="text-align: center; padding: 30px;">Heel Click Fortnite Emote</figcaption>
+            </div>
+            <div>
+                <!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/oSca__bu0is?si=44MoLdb-Wrr2JzLK&amp;start=11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/efYjsQ24E3w?si=YVfcvNCZrQZJuYAj"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <figcaption style="text-align: center; padding: 30px;">SLUT ME OUT 2</figcaption>
+            </div>
+        </div>
+    </section>
+
+    <section class="place-content-center">
+        <h2 class="text-center" id="download">Download Files</h2>
+        <ul class="flex justify-items-center justify-between p-6">
+            <li><a href="{% static 'bytep.pdf' %}" download>File 1 - PDF Document</a></li>
+            <li><a href="{% static 'bytep.doc' %}" download>File 2 - Word Document</a></li>
+        </ul>
+    </section>
+
+    <script src="{% static 'script.js' %}">
+    </script>
 </body>
+
 </html>

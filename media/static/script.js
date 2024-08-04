@@ -1,13 +1,11 @@
+// JavaScript for dropdown functionality
 function toggleDropdown() {
     var dropdownContent = document.getElementById("dropdownContent");
-    if (dropdownContent.classList.contains("show")) {
-        dropdownContent.classList.remove("show");
-    } else {
-        dropdownContent.classList.add("show");
-    }
+    dropdownContent.classList.toggle("hidden");
 }
 
-window.onclick = function(event) {
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
         for (var i = 0; i < dropdowns.length; i++) {
